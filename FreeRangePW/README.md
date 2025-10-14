@@ -56,6 +56,32 @@ Comprender cómo Playwright maneja la asincronía (async/await), lo que permite 
 
 Automatizar interacciones repetitivas para mejorar la eficiencia y confiabilidad de las pruebas.
 
+## ⚠️ Flakiness en tests automatizados
+
+**Definición:**  
+Tests que a veces **pasan y a veces fallan** sin que haya cambios reales en el código o funcionalidad.  
+
+### Ejemplos de causas:
+- **Sincronización incorrecta:** el test hace clic antes de que el botón exista en la página.
+- **Dependencia del entorno:** la red es lenta y el test espera un elemento que no carga a tiempo.
+- **Orden de ejecución:** un test depende de datos que otro test dejó modificados.
+- **Datos aleatorios o externos:** el test espera un valor que cambia cada vez que corre.
+
+### Cómo Playwright reduce la flakiness:
+1. **Esperas inteligentes:**  
+```ts
+await page.waitForSelector('#login-button');
+await page.click('#login-button');
+
+Tests aislados – cada test prepara su propio estado.
+
+Manejo de datos controlados – se usan fixtures o JSON.
+
+Asincronía manejada con async/await – garantiza que cada paso espere al anterior.
+
+✅ Beneficio:
+Tests más confiables, reproducibles y fáciles de mantener.
+
 🏷️ Curso
 
 Este trabajo forma parte del curso Automatización con Playwright.
