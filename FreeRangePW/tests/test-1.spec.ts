@@ -8,9 +8,9 @@ import { test, Browser, Page, expect } from '@playwright/test';
 
     const secciones = [
       { nombre: 'Cursos', url: '/cursos', tituloEsperado: 'Cursos' },
-      { nombre: 'Academia', url: '/academia', tituloEsperado: 'La Academia' },
+      { nombre: 'Academia', url: '/academia', tituloEsperado: 'Academia' },
       { nombre: 'Recursos', url: '/recursos', tituloEsperado: 'Recursos' },
-      { nombre: 'Blog', url: '/blog', tituloEsperado: 'Un blog de testing de Software' }
+      { nombre: 'Blog', url: '/blog', tituloEsperado: 'Free Range Testers' }
       // Agrega más secciones si es necesario
     ];
     for (const seccion of secciones) {
